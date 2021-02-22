@@ -17,7 +17,14 @@ export class TasksListComponent implements OnInit {
         this.tasks.push(new Task(2, "Task 2", false, "21/02/2020"));
         this.tasks.push(new Task(3, "Task 3", false, "12/02/2020"));
         this.tasks.push(new Task(4, "Task 4", false, "02/02/2020"));
-
   }
+
+    getDueDateLabel(task: Task) {
+        return task.completed ? 'label-success' : 'label-primary';
+    }
+
+    onTaskChange(event, task) {
+        console.log('Task has changed');
+    }
 
 }
